@@ -1,4 +1,7 @@
 import './App.css'
+import arenaHero from './assets/msc-arena-hero.png'
+import fightNight from './assets/msc-fight-night.png'
+import instagramAvatar from './assets/msc-instagram-avatar.jpg'
 
 const eventHighlights = [
   {
@@ -46,6 +49,7 @@ function App() {
       </header>
 
       <section className="hero-section" id="inicio">
+        <img className="hero-image" src={arenaHero} alt="" aria-hidden="true" />
         <div className="hero-bg" aria-hidden="true">
           <span className="arena-light arena-light-left" />
           <span className="arena-light arena-light-right" />
@@ -57,6 +61,13 @@ function App() {
         </div>
 
         <div className="hero-content">
+          <div className="social-proof">
+            <img src={instagramAvatar} alt="MARGEM SUL CAGE no Instagram" />
+            <div>
+              <span>@msc_championship</span>
+              <strong>MARGEM SUL CAGE · 7.671 seguidores</strong>
+            </div>
+          </div>
           <p className="hero-date">22 de Dezembro | Sagres Campo Pequeno, Lisboa</p>
           <h1>
             <span>MSC</span>
@@ -78,12 +89,33 @@ function App() {
           </div>
         </div>
 
-        <aside className="fight-poster" aria-label="Resumo do evento">
-          <div className="poster-ring" aria-hidden="true" />
-          <p className="poster-title">Campo Pequeno</p>
-          <p className="poster-number">22.12</p>
-          <p className="poster-caption">MMA nacional em palco grande</p>
+        <aside className="fight-poster" aria-label="Resumo visual do evento">
+          <img src={fightNight} alt="" aria-hidden="true" />
+          <div className="poster-glass">
+            <p className="poster-eyebrow">Edição especial</p>
+            <p className="poster-title">Campo Pequeno</p>
+            <p className="poster-number">22.12</p>
+            <p className="poster-caption">MMA nacional em palco grande</p>
+          </div>
         </aside>
+      </section>
+
+      <section className="image-band" aria-label="Ambiente visual MSC Championship">
+        <article className="image-feature">
+          <img src={arenaHero} alt="Arena circular iluminada para uma gala premium de MMA" />
+          <div>
+            <span>Lisboa em modo fight night</span>
+            <strong>Uma noite desenhada para luz, som, entrada de atletas e octógono em destaque.</strong>
+          </div>
+        </article>
+        <article className="instagram-card">
+          <img src={instagramAvatar} alt="Perfil oficial MSC Championship no Instagram" />
+          <div>
+            <span>Instagram oficial</span>
+            <strong>@msc_championship</strong>
+            <p>338 publicações · 7.671 seguidores · novidades, atletas e bilhetes em breve.</p>
+          </div>
+        </article>
       </section>
 
       <section className="detail-strip" aria-label="Detalhes rápidos do evento">
