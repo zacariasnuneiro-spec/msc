@@ -126,14 +126,11 @@ function App() {
         </div>
 
         <div className="hero-content">
-          <div className="social-proof">
-            <img src={brandIcon} alt="MARGEM SUL CAGE no Instagram" />
-            <div>
-              <span>@msc_championship</span>
-              <strong>MARGEM SUL CAGE · 7.671 seguidores</strong>
-            </div>
+          <div className="hero-badges" aria-label="Informação principal do evento">
+            <span>Gala MMA</span>
+            <span>22 Dezembro 2026</span>
+            <span>Campo Pequeno</span>
           </div>
-          <p className="hero-date">22 de Dezembro | Sagres Campo Pequeno, Lisboa</p>
           <h1>
             <span>MSC</span>
             <span>Championship</span>
@@ -149,9 +146,9 @@ function App() {
               <span>Bilhetes em breve</span>
               <span className="button-icon" aria-hidden="true">→</span>
             </a>
-            <a className="button button-secondary" href="https://www.instagram.com/msc_championship/" target="_blank" rel="noreferrer">
-              <span>Seguir @msc_championship</span>
-              <span className="button-icon" aria-hidden="true">↗</span>
+            <a className="button button-secondary" href="#evento">
+              <span>Ver evento</span>
+              <span className="button-icon" aria-hidden="true">↓</span>
             </a>
           </div>
           <div className="mobile-event-dock" aria-label="Resumo rápido do evento">
@@ -372,13 +369,6 @@ function App() {
           </a>
         </div>
       </footer>
-
-      <div className="mobile-bottom-bar" aria-label="Ações rápidas mobile">
-        <span>22 Dez · Lisboa</span>
-        <a href="https://www.instagram.com/msc_championship/" target="_blank" rel="noreferrer">
-          Seguir MSC
-        </a>
-      </div>
     </main>
   )
 }

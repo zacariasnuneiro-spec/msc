@@ -255,7 +255,6 @@
   padding-top: 36px;
 }
 
-.social-proof,
 .image-feature div,
 .instagram-card {
   border: 1px solid rgba(255, 255, 255, 0.13);
@@ -265,16 +264,6 @@
   backdrop-filter: blur(18px);
 }
 
-.social-proof {
-  display: inline-flex;
-  gap: 12px;
-  align-items: center;
-  max-width: 100%;
-  margin-bottom: 28px;
-  padding: 9px 14px 9px 9px;
-}
-
-.social-proof img,
 .instagram-card img {
   flex: 0 0 auto;
   width: 42px;
@@ -284,7 +273,6 @@
   object-fit: cover;
 }
 
-.social-proof span,
 .image-feature span,
 .instagram-card span,
 .poster-eyebrow {
@@ -296,7 +284,6 @@
   text-transform: uppercase;
 }
 
-.social-proof strong,
 .image-feature strong,
 .instagram-card strong {
   display: block;
@@ -306,11 +293,27 @@
   line-height: 1.25;
 }
 
-.hero-date {
-  margin: 0 0 26px;
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.hero-badges span {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  border: 1px solid rgba(246, 212, 134, 0.18);
+  border-radius: 999px;
+  padding: 0 13px;
+  background: rgba(8, 6, 6, 0.56);
   color: #f0c36c;
-  font-size: clamp(1rem, 1.8vw, 1.28rem);
-  font-weight: 800;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(14px);
 }
 
 h1 {
@@ -348,8 +351,7 @@ h1 span:nth-child(2) {
   margin-top: 42px;
 }
 
-.mobile-event-dock,
-.mobile-bottom-bar {
+.mobile-event-dock {
   display: none;
 }
 
@@ -1255,49 +1257,6 @@ h3 {
   text-decoration: none;
 }
 
-.mobile-bottom-bar {
-  position: fixed;
-  right: 12px;
-  bottom: 12px;
-  left: 12px;
-  z-index: 20;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  min-height: 58px;
-  border: 1px solid rgba(246, 212, 134, 0.24);
-  border-radius: 8px;
-  padding: 8px 8px 8px 16px;
-  background:
-    linear-gradient(135deg, rgba(16, 12, 10, 0.92), rgba(45, 13, 16, 0.9)),
-    rgba(5, 4, 4, 0.82);
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.46), 0 0 0 1px rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(18px);
-}
-
-.mobile-bottom-bar span,
-.mobile-bottom-bar a {
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.mobile-bottom-bar span {
-  color: rgba(248, 240, 223, 0.76);
-}
-
-.mobile-bottom-bar a {
-  display: inline-flex;
-  min-height: 40px;
-  align-items: center;
-  border-radius: 6px;
-  padding: 0 14px;
-  background: linear-gradient(135deg, #f6d486, #b6782b 58%, #8d1420);
-  color: #130706;
-  text-decoration: none;
-}
-
 @keyframes light-sweep {
   from {
     opacity: 0.56;
@@ -1456,7 +1415,6 @@ h3 {
 
 @media (max-width: 560px) {
   .site-shell {
-    padding-bottom: 74px;
     background:
       radial-gradient(circle at 50% 0%, rgba(176, 19, 38, 0.28), transparent 25rem),
       radial-gradient(circle at 100% 18%, rgba(193, 137, 55, 0.16), transparent 18rem),
@@ -1531,8 +1489,9 @@ h3 {
 
   .hero-section {
     width: min(100% - 20px, 1180px);
-    padding-top: 152px;
-    padding-bottom: 40px;
+    min-height: 100svh;
+    padding-top: 148px;
+    padding-bottom: 32px;
   }
 
   .hero-section::after {
@@ -1546,34 +1505,40 @@ h3 {
     object-position: center top;
   }
 
-  .social-proof {
-    width: 100%;
-    margin-bottom: 24px;
-    padding: 10px 12px 10px 10px;
+  .hero-badges {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 22px;
   }
 
-  .social-proof img {
-    width: 48px;
-    height: 48px;
-  }
-
-  .hero-date {
-    margin-bottom: 18px;
-    max-width: 330px;
-    color: #f4d796;
-    line-height: 1.35;
+  .hero-badges span {
+    width: fit-content;
+    min-height: 31px;
+    border-radius: 6px;
+    padding-inline: 10px;
+    background: rgba(7, 5, 5, 0.44);
+    font-size: 10px;
   }
 
   h1 {
-    font-size: clamp(2.12rem, 10.6vw, 2.62rem);
-    line-height: 0.82;
+    max-width: 100%;
+    font-size: clamp(2.36rem, 11.8vw, 2.98rem);
+    line-height: 0.8;
+    text-shadow: 0 18px 48px rgba(0, 0, 0, 0.72);
   }
 
   .hero-copy {
-    margin-top: 26px;
+    max-width: 360px;
+    margin-top: 22px;
     color: rgba(248, 240, 223, 0.82);
-    font-size: 1.05rem;
-    line-height: 1.72;
+    font-size: 0.98rem;
+    line-height: 1.66;
+  }
+
+  .hero-actions {
+    gap: 10px;
+    margin-top: 28px;
   }
 
   .button {
@@ -1704,10 +1669,6 @@ h3 {
     padding-top: 18px;
   }
 
-  .mobile-bottom-bar {
-    display: flex;
-  }
-
   .past-card {
     min-height: 420px;
   }
@@ -1748,10 +1709,10 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(1.98rem, 10.4vw, 2.28rem);
+    font-size: clamp(2.1rem, 11vw, 2.46rem);
   }
 
-  .social-proof {
-    padding-right: 10px;
+  .hero-copy {
+    max-width: 330px;
   }
 }
