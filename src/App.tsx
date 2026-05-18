@@ -311,15 +311,44 @@ function App() {
       </section>
 
       <footer className="site-footer" aria-label="Rodapé">
-        <div className="footer-brand">
-          <span className="brand-mark">MSC</span>
-          <div>
-            <strong>MSC Championship 2026</strong>
-            <p>22 de dezembro · Sagres Campo Pequeno, Lisboa</p>
+        <div className="footer-main">
+          <div className="footer-brand">
+            <span className="brand-mark">MSC</span>
+            <div>
+              <strong>MSC Championship 2026</strong>
+              <p>
+                A Margem Sul Championship regressa com uma gala de Mixed Martial Arts
+                no Sagres Campo Pequeno, em Lisboa.
+              </p>
+            </div>
+          </div>
+
+          <div className="footer-columns">
+            <div className="footer-column">
+              <span>Evento</span>
+              <a href="#inicio">MSC Championship 2026</a>
+              <a href="#evento">Margem Sul Championship</a>
+              <a href="#local">Campo Pequeno</a>
+            </div>
+            <div className="footer-column">
+              <span>Detalhes</span>
+              <p>22 de dezembro de 2026</p>
+              <p>Sagres Campo Pequeno, Lisboa</p>
+              <p>Bilhetes e card completo em breve</p>
+            </div>
+            <div className="footer-column">
+              <span>Oficial</span>
+              <a href="https://www.instagram.com/msc_championship/" target="_blank" rel="noreferrer">
+                @msc_championship
+              </a>
+              <p>Novidades nas redes sociais oficiais</p>
+            </div>
           </div>
         </div>
-        <div className="footer-meta">
-          <span>Bilhetes e card completo em breve</span>
+
+        <div className="footer-bottom">
+          <span>MSC Championship 2026</span>
+          <span>22 de dezembro · Lisboa</span>
           <a href="https://www.instagram.com/msc_championship/" target="_blank" rel="noreferrer">
             @msc_championship
           </a>
