@@ -126,11 +126,6 @@ function App() {
         </div>
 
         <div className="hero-content">
-          <div className="hero-badges" aria-label="Informação principal do evento">
-            <span>Gala MMA</span>
-            <span>22 Dezembro 2026</span>
-            <span>Campo Pequeno</span>
-          </div>
           <h1>
             <span>MSC</span>
             <span>Championship</span>
@@ -141,6 +136,9 @@ function App() {
             Uma noite de combates intensos, talento nacional e o espírito da Margem Sul num dos palcos
             mais icónicos de Portugal.
           </p>
+          <p className="hero-copy-mobile">
+            Gala de MMA nacional no Sagres Campo Pequeno, Lisboa.
+          </p>
           <div className="hero-actions" aria-label="Ações principais">
             <a className="button button-primary" href="#novidades">
               <span>Bilhetes em breve</span>
@@ -150,20 +148,6 @@ function App() {
               <span>Ver evento</span>
               <span className="button-icon" aria-hidden="true">↓</span>
             </a>
-          </div>
-          <div className="mobile-event-dock" aria-label="Resumo rápido do evento">
-            <span>
-              <strong>22 Dez</strong>
-              Data
-            </span>
-            <span>
-              <strong>Lisboa</strong>
-              Local
-            </span>
-            <span>
-              <strong>MMA</strong>
-              Gala
-            </span>
           </div>
         </div>
 
