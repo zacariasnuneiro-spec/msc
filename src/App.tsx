@@ -1,6 +1,7 @@
 import './App.css'
 import arenaHero from './assets/msc-arena-hero.png'
 import instagramAvatar from './assets/msc-instagram-avatar.jpg'
+import posterArena from './assets/msc-poster-arena.jpg'
 import merchAccessories from './assets/merch-acessorios-training.jpg'
 import merchShorts from './assets/merch-calcoes-combate.jpg'
 import merchJersey from './assets/merch-camisola-performance.jpg'
@@ -121,16 +122,8 @@ function App() {
         </div>
 
         <aside className="fight-poster" aria-label="Resumo visual do evento">
-          <div className="poster-stage" aria-hidden="true">
-            <span className="poster-beam poster-beam-left" />
-            <span className="poster-beam poster-beam-right" />
-            <span className="poster-halo" />
-            <div className="octagon-mark">
-              <span className="octagon-grid" />
-              <span className="octagon-core" />
-              <span className="octagon-fence octagon-fence-one" />
-              <span className="octagon-fence octagon-fence-two" />
-            </div>
+          <img className="poster-photo" src={posterArena} alt="" aria-hidden="true" />
+          <div className="poster-stage">
             <div className="poster-metric poster-metric-date">
               <span>Data</span>
               <strong>22 Dez</strong>

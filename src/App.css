@@ -379,27 +379,24 @@ h1 span:nth-child(2) {
   overflow: hidden;
   border: 1px solid rgba(246, 212, 134, 0.2);
   border-radius: 8px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%),
-    radial-gradient(circle at 50% 22%, rgba(246, 212, 134, 0.2), transparent 18rem),
-    radial-gradient(circle at 78% 18%, rgba(174, 20, 35, 0.34), transparent 16rem),
-    linear-gradient(145deg, #100707, #050404 58%, #120b09);
+  background: #070505;
   box-shadow: 0 34px 100px rgba(0, 0, 0, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .fight-poster::before {
   position: absolute;
   inset: 0;
+  z-index: 1;
+  pointer-events: none;
   content: '';
   background:
-    linear-gradient(90deg, rgba(246, 212, 134, 0.06) 1px, transparent 1px),
-    linear-gradient(rgba(246, 212, 134, 0.05) 1px, transparent 1px);
-  background-size: 38px 38px;
-  mask-image: radial-gradient(circle at 50% 28%, black, transparent 72%);
+    linear-gradient(180deg, rgba(5, 4, 4, 0.06) 0%, rgba(5, 4, 4, 0.22) 46%, rgba(5, 4, 4, 0.9) 100%),
+    radial-gradient(circle at 50% 42%, transparent 0 10rem, rgba(0, 0, 0, 0.34) 26rem);
 }
 
 .fight-poster::after {
   position: absolute;
+  z-index: 2;
   inset: auto -24% 31% -24%;
   height: 2px;
   content: '';
@@ -407,131 +404,23 @@ h1 span:nth-child(2) {
   box-shadow: 0 0 80px rgba(246, 212, 134, 0.52);
 }
 
+.poster-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: saturate(1.08) contrast(1.06);
+  transform: scale(1.01);
+}
+
 .poster-stage {
   position: absolute;
   inset: 0;
+  z-index: 5;
   overflow: hidden;
-}
-
-.poster-stage::before {
-  position: absolute;
-  right: 9%;
-  bottom: 24%;
-  left: 9%;
-  height: 34%;
-  content: '';
-  border: 1px solid rgba(246, 212, 134, 0.2);
-  background:
-    linear-gradient(120deg, transparent 0 48%, rgba(246, 212, 134, 0.26) 49% 51%, transparent 52%),
-    linear-gradient(60deg, transparent 0 48%, rgba(246, 212, 134, 0.14) 49% 51%, transparent 52%),
-    rgba(255, 255, 255, 0.025);
-  transform: perspective(620px) rotateX(64deg);
-  transform-origin: bottom;
-}
-
-.poster-beam {
-  position: absolute;
-  top: -8%;
-  width: 38%;
-  height: 72%;
-  background: linear-gradient(180deg, rgba(246, 212, 134, 0.5), rgba(176, 19, 38, 0.08) 52%, transparent);
-  filter: blur(2px);
-  mix-blend-mode: screen;
-  opacity: 0.52;
-  transform-origin: top;
-  animation: beam-breathe 5.8s ease-in-out infinite alternate;
-}
-
-.poster-beam-left {
-  left: 6%;
-  transform: rotate(24deg);
-}
-
-.poster-beam-right {
-  right: 6%;
-  animation-delay: -1.6s;
-  transform: rotate(-24deg);
-}
-
-.poster-halo {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  width: 230px;
-  height: 230px;
-  border: 1px solid rgba(246, 212, 134, 0.24);
-  border-radius: 50%;
-  box-shadow: 0 0 90px rgba(246, 212, 134, 0.18);
-  opacity: 0.86;
-  transform: translateX(-50%);
-}
-
-.octagon-mark {
-  position: absolute;
-  top: 18%;
-  left: 50%;
-  display: grid;
-  width: 270px;
-  height: 270px;
-  place-items: center;
-  transform: translateX(-50%);
-}
-
-.octagon-mark::before,
-.octagon-mark::after,
-.octagon-grid,
-.octagon-core {
-  position: absolute;
-  content: '';
-  clip-path: polygon(30% 0, 70% 0, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0 70%, 0 30%);
-}
-
-.octagon-mark::before {
-  inset: 0;
-  border: 1px solid rgba(246, 212, 134, 0.36);
-  background: linear-gradient(145deg, rgba(246, 212, 134, 0.08), rgba(255, 255, 255, 0.02));
-  box-shadow: 0 0 70px rgba(246, 212, 134, 0.16);
-  animation: octagon-float 6s ease-in-out infinite;
-}
-
-.octagon-mark::after {
-  inset: 26px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(0, 0, 0, 0.18);
-}
-
-.octagon-grid {
-  inset: 42px;
-  z-index: 1;
-  border: 1px solid rgba(246, 212, 134, 0.12);
-  background:
-    repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px 12px),
-    repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.1) 0 1px, transparent 1px 12px);
-  opacity: 0.42;
-}
-
-.octagon-core {
-  inset: 94px;
-  z-index: 2;
-  background: radial-gradient(circle, rgba(246, 212, 134, 0.56), rgba(176, 19, 38, 0.18) 54%, transparent 70%);
-  filter: blur(10px);
-  animation: core-pulse 3.2s ease-in-out infinite alternate;
-}
-
-.octagon-fence {
-  position: absolute;
-  z-index: 3;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.24), transparent);
-}
-
-.octagon-fence-one {
-  transform: rotate(28deg);
-}
-
-.octagon-fence-two {
-  transform: rotate(-28deg);
 }
 
 .poster-metric {
@@ -570,13 +459,13 @@ h1 span:nth-child(2) {
 }
 
 .poster-metric-place {
+  top: 42%;
   right: 22px;
-  bottom: 38%;
 }
 
 .poster-glass {
   position: relative;
-  z-index: 1;
+  z-index: 4;
   margin: 22px;
   padding: 28px;
   border: 1px solid rgba(246, 212, 134, 0.22);
@@ -973,41 +862,6 @@ h3 {
   }
 }
 
-@keyframes beam-breathe {
-  from {
-    opacity: 0.34;
-    scale: 0.96 1;
-  }
-
-  to {
-    opacity: 0.66;
-    scale: 1.06 1;
-  }
-}
-
-@keyframes octagon-float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-2deg);
-  }
-
-  50% {
-    transform: translateY(-8px) rotate(2deg);
-  }
-}
-
-@keyframes core-pulse {
-  from {
-    opacity: 0.46;
-    transform: scale(0.92);
-  }
-
-  to {
-    opacity: 0.82;
-    transform: scale(1.12);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1053,10 +907,6 @@ h3 {
 
   .fight-poster {
     min-height: 390px;
-  }
-
-  .octagon-mark {
-    top: 10%;
   }
 
   .poster-metric-place {
@@ -1175,18 +1025,6 @@ h3 {
   .poster-glass {
     margin: 16px;
     padding: 22px;
-  }
-
-  .octagon-mark {
-    top: 8%;
-    width: 220px;
-    height: 220px;
-  }
-
-  .poster-halo {
-    top: 12%;
-    width: 190px;
-    height: 190px;
   }
 
   .poster-metric {
