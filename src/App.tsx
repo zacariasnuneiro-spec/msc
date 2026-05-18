@@ -1,6 +1,6 @@
 import './App.css'
 import arenaHero from './assets/msc-arena-hero.png'
-import instagramAvatar from './assets/msc-instagram-avatar.jpg'
+import brandIcon from './assets/msc-brand-icon.jpg'
 import instagramGrid from './assets/msc-instagram-grid.jpg'
 import posterArena from './assets/msc-poster-arena.jpg'
 import pastCageNight from './assets/msc-past-cage-night.jpg'
@@ -100,7 +100,9 @@ function App() {
     <main className="site-shell">
       <header className="topbar" aria-label="Navegação principal">
         <a className="brand" href="#inicio" aria-label="MSC Championship 2026">
-          <span className="brand-mark">MSC</span>
+          <span className="brand-mark">
+            <img src={brandIcon} alt="" aria-hidden="true" />
+          </span>
           <span className="brand-copy">Championship</span>
         </a>
         <nav className="nav-links">
@@ -125,7 +127,7 @@ function App() {
 
         <div className="hero-content">
           <div className="social-proof">
-            <img src={instagramAvatar} alt="MARGEM SUL CAGE no Instagram" />
+            <img src={brandIcon} alt="MARGEM SUL CAGE no Instagram" />
             <div>
               <span>@msc_championship</span>
               <strong>MARGEM SUL CAGE · 7.671 seguidores</strong>
@@ -184,7 +186,7 @@ function App() {
           </div>
         </article>
         <article className="instagram-card">
-          <img src={instagramAvatar} alt="Perfil oficial MSC Championship no Instagram" />
+          <img src={brandIcon} alt="Perfil oficial MSC Championship no Instagram" />
           <div>
             <span>Instagram oficial</span>
             <strong>@msc_championship</strong>
@@ -313,7 +315,9 @@ function App() {
       <footer className="site-footer" aria-label="Rodapé">
         <div className="footer-main">
           <div className="footer-brand">
-            <span className="brand-mark">MSC</span>
+            <span className="brand-mark">
+              <img src={brandIcon} alt="" aria-hidden="true" />
+            </span>
             <div>
               <strong>MSC Championship 2026</strong>
               <p>
