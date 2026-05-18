@@ -1,7 +1,11 @@
 import './App.css'
 import arenaHero from './assets/msc-arena-hero.png'
 import instagramAvatar from './assets/msc-instagram-avatar.jpg'
+import instagramGrid from './assets/msc-instagram-grid.jpg'
 import posterArena from './assets/msc-poster-arena.jpg'
+import pastCageNight from './assets/msc-past-cage-night.jpg'
+import pastFaceoff from './assets/msc-past-faceoff.jpg'
+import walkoutTunnel from './assets/msc-walkout-tunnel.jpg'
 import merchAccessories from './assets/merch-acessorios-training.jpg'
 import merchShorts from './assets/merch-calcoes-combate.jpg'
 import merchJersey from './assets/merch-camisola-performance.jpg'
@@ -67,6 +71,27 @@ const merchItems = [
     title: 'Acessórios oficiais',
     text: 'Pack visual com boné, ligaduras e luvas de treino para completar a linha MSC Championship 2026.',
     image: merchAccessories,
+  },
+]
+
+const pastEvents = [
+  {
+    eyebrow: 'Seixal',
+    title: 'Noites MSC com casa cheia',
+    text: 'A energia das edições anteriores criou uma base forte para levar a Margem Sul a um palco maior.',
+    image: pastCageNight,
+  },
+  {
+    eyebrow: 'Faceoff',
+    title: 'Rivalidades, cinturões e ambição',
+    text: 'Pesagens, encaradas e momentos de tensão fazem parte da identidade competitiva da MSC.',
+    image: pastFaceoff,
+  },
+  {
+    eyebrow: 'Instagram oficial',
+    title: '@msc_championship',
+    text: 'Preview visual inspirado no feed oficial: treinos, atletas, walkouts, merch e bastidores.',
+    image: instagramGrid,
   },
 ]
 
@@ -152,10 +177,10 @@ function App() {
 
       <section className="image-band" aria-label="Ambiente visual MSC Championship">
         <article className="image-feature">
-          <img src={arenaHero} alt="Arena circular iluminada para uma gala premium de MMA" />
+          <img src={walkoutTunnel} alt="Entrada de atletas em túnel iluminado para uma gala premium de MMA" />
           <div>
-            <span>Lisboa em modo fight night</span>
-            <strong>Uma noite desenhada para luz, som, entrada de atletas e octógono em destaque.</strong>
+            <span>Walkout de grande palco</span>
+            <strong>Entrada de atletas, luz, som e tensão antes da porta do octógono abrir.</strong>
           </div>
         </article>
         <article className="instagram-card">
@@ -165,6 +190,7 @@ function App() {
             <strong>@msc_championship</strong>
             <p>338 publicações · 7.671 seguidores · novidades, atletas e bilhetes em breve.</p>
           </div>
+          <img className="instagram-preview" src={instagramGrid} alt="Preview visual de conteúdos inspirados no Instagram oficial MSC Championship" />
         </article>
       </section>
 
@@ -245,6 +271,29 @@ function App() {
             <p>{card.text}</p>
           </article>
         ))}
+      </section>
+
+      <section className="past-section" id="historico">
+        <div className="past-header">
+          <span className="section-kicker">Eventos passados MSC</span>
+          <h2>A base da Margem Sul antes do Campo Pequeno.</h2>
+          <p>
+            Um resumo visual da energia construída nas edições anteriores: público perto da ação,
+            atletas em destaque e conteúdo oficial a acompanhar a evolução da MSC.
+          </p>
+        </div>
+        <div className="past-grid">
+          {pastEvents.map((event) => (
+            <article className="past-card" key={event.title}>
+              <img src={event.image} alt={event.title} />
+              <div>
+                <span>{event.eyebrow}</span>
+                <h3>{event.title}</h3>
+                <p>{event.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="reveal-section" id="novidades">
