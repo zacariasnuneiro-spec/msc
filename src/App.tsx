@@ -11,27 +11,33 @@ const eventHighlights = [
   {
     label: 'Data',
     value: '22 de dezembro de 2026',
+    short: '22.12.26',
   },
   {
     label: 'Local',
     value: 'Sagres Campo Pequeno, Lisboa',
+    short: 'Lisboa',
   },
   {
     label: 'Formato',
     value: 'Gala especial de Mixed Martial Arts',
+    short: 'MMA',
   },
 ]
 
 const featureCards = [
   {
+    number: '01',
     title: 'Combates de alto nível',
     text: 'Atletas da Margem Sul e de todo o país disputam vitórias, cinturões e um lugar na história do MMA português.',
   },
   {
+    number: '02',
     title: 'Produção cuidada',
     text: 'Uma experiência de gala preparada para elevar a energia do octógono a um dos palcos mais emblemáticos de Portugal.',
   },
   {
+    number: '03',
     title: 'Espírito Margem Sul',
     text: 'A MSC chega a Lisboa com ambição, identidade e a força de uma comunidade que quer ver o MMA nacional crescer.',
   },
@@ -113,10 +119,12 @@ function App() {
           </p>
           <div className="hero-actions" aria-label="Ações principais">
             <a className="button button-primary" href="#novidades">
-              Bilhetes em breve
+              <span>Bilhetes em breve</span>
+              <span className="button-icon" aria-hidden="true">→</span>
             </a>
             <a className="button button-secondary" href="https://www.instagram.com/msc_championship/" target="_blank" rel="noreferrer">
-              Seguir @msc_championship
+              <span>Seguir @msc_championship</span>
+              <span className="button-icon" aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
@@ -163,8 +171,11 @@ function App() {
       <section className="detail-strip" aria-label="Detalhes rápidos do evento">
         {eventHighlights.map((item) => (
           <article className="detail-item" key={item.label}>
-            <span>{item.label}</span>
-            <strong>{item.value}</strong>
+            <div>
+              <span>{item.label}</span>
+              <strong>{item.value}</strong>
+            </div>
+            <em>{item.short}</em>
           </article>
         ))}
       </section>
@@ -192,6 +203,10 @@ function App() {
                 <span>{item.category}</span>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>
+                <a className="card-action" href="https://www.instagram.com/msc_championship/" target="_blank" rel="noreferrer">
+                  <span>Ver novidades</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
               </div>
             </article>
           ))}
@@ -222,7 +237,10 @@ function App() {
       <section className="feature-section" id="local">
         {featureCards.map((card) => (
           <article className="feature-card" key={card.title}>
-            <span className="feature-line" aria-hidden="true" />
+            <div className="feature-card-top">
+              <span className="feature-line" aria-hidden="true" />
+              <span className="feature-number">{card.number}</span>
+            </div>
             <h3>{card.title}</h3>
             <p>{card.text}</p>
           </article>
@@ -238,7 +256,8 @@ function App() {
           </p>
         </div>
         <a className="button button-primary" href="https://www.instagram.com/msc_championship/" target="_blank" rel="noreferrer">
-          Seguir @msc_championship
+          <span>Seguir @msc_championship</span>
+          <span className="button-icon" aria-hidden="true">↗</span>
         </a>
       </section>
     </main>
