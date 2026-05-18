@@ -348,6 +348,11 @@ h1 span:nth-child(2) {
   margin-top: 42px;
 }
 
+.mobile-event-dock,
+.mobile-bottom-bar {
+  display: none;
+}
+
 .button {
   position: relative;
   display: inline-flex;
@@ -1250,6 +1255,49 @@ h3 {
   text-decoration: none;
 }
 
+.mobile-bottom-bar {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  z-index: 20;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 58px;
+  border: 1px solid rgba(246, 212, 134, 0.24);
+  border-radius: 8px;
+  padding: 8px 8px 8px 16px;
+  background:
+    linear-gradient(135deg, rgba(16, 12, 10, 0.92), rgba(45, 13, 16, 0.9)),
+    rgba(5, 4, 4, 0.82);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.46), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+}
+
+.mobile-bottom-bar span,
+.mobile-bottom-bar a {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mobile-bottom-bar span {
+  color: rgba(248, 240, 223, 0.76);
+}
+
+.mobile-bottom-bar a {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  border-radius: 6px;
+  padding: 0 14px;
+  background: linear-gradient(135deg, #f6d486, #b6782b 58%, #8d1420);
+  color: #130706;
+  text-decoration: none;
+}
+
 @keyframes light-sweep {
   from {
     opacity: 0.56;
@@ -1407,6 +1455,14 @@ h3 {
 }
 
 @media (max-width: 560px) {
+  .site-shell {
+    padding-bottom: 74px;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(176, 19, 38, 0.28), transparent 25rem),
+      radial-gradient(circle at 100% 18%, rgba(193, 137, 55, 0.16), transparent 18rem),
+      linear-gradient(160deg, #050404 0%, #12090a 46%, #030303 100%);
+  }
+
   .hero-section,
   .detail-strip,
   .editorial-section,
@@ -1420,7 +1476,7 @@ h3 {
 
   .topbar {
     height: auto;
-    min-height: 92px;
+    min-height: 98px;
     align-items: stretch;
     flex-direction: column;
     justify-content: center;
@@ -1431,7 +1487,10 @@ h3 {
   .topbar::before {
     inset: 0;
     border-radius: 8px;
-    background: rgba(7, 6, 6, 0.76);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent),
+      rgba(7, 6, 6, 0.78);
+    box-shadow: 0 18px 54px rgba(0, 0, 0, 0.42);
   }
 
   .brand {
@@ -1439,8 +1498,8 @@ h3 {
   }
 
   .brand-mark {
-    width: 38px;
-    height: 38px;
+    width: 48px;
+    height: 48px;
     font-size: 12px;
   }
 
@@ -1471,22 +1530,50 @@ h3 {
   }
 
   .hero-section {
-    padding-top: 142px;
-    padding-bottom: 54px;
+    width: min(100% - 20px, 1180px);
+    padding-top: 152px;
+    padding-bottom: 40px;
+  }
+
+  .hero-section::after {
+    background:
+      linear-gradient(180deg, rgba(5, 4, 4, 0.18), rgba(5, 4, 4, 0.82) 68%, #050404 100%),
+      linear-gradient(90deg, rgba(5, 4, 4, 0.86), rgba(5, 4, 4, 0.22), rgba(5, 4, 4, 0.82));
+  }
+
+  .hero-image {
+    opacity: 0.74;
+    object-position: center top;
+  }
+
+  .social-proof {
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 10px 12px 10px 10px;
+  }
+
+  .social-proof img {
+    width: 48px;
+    height: 48px;
   }
 
   .hero-date {
     margin-bottom: 18px;
     max-width: 330px;
+    color: #f4d796;
     line-height: 1.35;
   }
 
   h1 {
-    font-size: clamp(2rem, 10.2vw, 2.46rem);
+    font-size: clamp(2.12rem, 10.6vw, 2.62rem);
+    line-height: 0.82;
   }
 
   .hero-copy {
     margin-top: 26px;
+    color: rgba(248, 240, 223, 0.82);
+    font-size: 1.05rem;
+    line-height: 1.72;
   }
 
   .button {
@@ -1501,8 +1588,43 @@ h3 {
     height: 30px;
   }
 
+  .mobile-event-dock {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .mobile-event-dock span {
+    display: grid;
+    min-height: 74px;
+    align-content: center;
+    border: 1px solid rgba(246, 212, 134, 0.16);
+    border-radius: 8px;
+    padding: 12px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+      rgba(7, 5, 5, 0.56);
+    color: rgba(248, 240, 223, 0.54);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    backdrop-filter: blur(14px);
+  }
+
+  .mobile-event-dock strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff8e8;
+    font-family: var(--display);
+    font-size: 1.16rem;
+    line-height: 0.95;
+  }
+
   .fight-poster {
-    min-height: 330px;
+    min-height: 390px;
+    box-shadow: 0 28px 78px rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 255, 255, 0.14);
   }
 
   .poster-glass {
@@ -1530,6 +1652,15 @@ h3 {
   .feature-card {
     min-height: auto;
     padding: 24px;
+  }
+
+  .detail-strip,
+  .merch-card,
+  .feature-card,
+  .past-card,
+  .footer-main {
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 22px 62px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.07);
   }
 
   .feature-card-top {
@@ -1573,6 +1704,10 @@ h3 {
     padding-top: 18px;
   }
 
+  .mobile-bottom-bar {
+    display: flex;
+  }
+
   .past-card {
     min-height: 420px;
   }
@@ -1612,12 +1747,8 @@ h3 {
     justify-content: flex-start;
   }
 
-  .hero-section {
-    width: min(100% - 20px, 1180px);
-  }
-
   h1 {
-    font-size: clamp(1.86rem, 10vw, 2.16rem);
+    font-size: clamp(1.98rem, 10.4vw, 2.28rem);
   }
 
   .social-proof {

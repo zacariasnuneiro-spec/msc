@@ -154,6 +154,20 @@ function App() {
               <span className="button-icon" aria-hidden="true">↗</span>
             </a>
           </div>
+          <div className="mobile-event-dock" aria-label="Resumo rápido do evento">
+            <span>
+              <strong>22 Dez</strong>
+              Data
+            </span>
+            <span>
+              <strong>Lisboa</strong>
+              Local
+            </span>
+            <span>
+              <strong>MMA</strong>
+              Gala
+            </span>
+          </div>
         </div>
 
         <aside className="fight-poster" aria-label="Resumo visual do evento">
@@ -358,6 +372,13 @@ function App() {
           </a>
         </div>
       </footer>
+
+      <div className="mobile-bottom-bar" aria-label="Ações rápidas mobile">
+        <span>22 Dez · Lisboa</span>
+        <a href="https://www.instagram.com/msc_championship/" target="_blank" rel="noreferrer">
+          Seguir MSC
+        </a>
+      </div>
     </main>
   )
 }
