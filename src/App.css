@@ -1136,6 +1136,55 @@ h3 {
   line-height: 1.72;
 }
 
+.site-footer {
+  display: flex;
+  width: min(1180px, calc(100% - 32px));
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin: 0 auto;
+  padding: 30px 0 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-brand strong,
+.footer-meta {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer-brand p {
+  margin: 6px 0 0;
+  color: rgba(248, 240, 223, 0.58);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: right;
+}
+
+.footer-meta span {
+  color: rgba(248, 240, 223, 0.54);
+}
+
+.footer-meta a {
+  color: #f0c36c;
+  text-decoration: none;
+}
+
 @keyframes light-sweep {
   from {
     opacity: 0.56;
@@ -1208,6 +1257,18 @@ h3 {
   .reveal-section {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
   }
 
   .detail-strip {
@@ -1287,7 +1348,8 @@ h3 {
   .merch-section,
   .feature-section,
   .past-section,
-  .reveal-section {
+  .reveal-section,
+  .site-footer {
     width: min(100% - 24px, 1180px);
   }
 

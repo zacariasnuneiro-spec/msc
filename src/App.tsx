@@ -309,6 +309,22 @@ function App() {
           <span className="button-icon" aria-hidden="true">↗</span>
         </a>
       </section>
+
+      <footer className="site-footer" aria-label="Rodapé">
+        <div className="footer-brand">
+          <span className="brand-mark">MSC</span>
+          <div>
+            <strong>MSC Championship 2026</strong>
+            <p>22 de dezembro · Sagres Campo Pequeno, Lisboa</p>
+          </div>
+        </div>
+        <div className="footer-meta">
+          <span>Bilhetes e card completo em breve</span>
+          <a href="https://www.instagram.com/msc_championship/" target="_blank" rel="noreferrer">
+            @msc_championship
+          </a>
+        </div>
+      </footer>
     </main>
   )
 }
