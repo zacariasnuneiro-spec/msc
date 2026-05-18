@@ -1,6 +1,5 @@
 import './App.css'
 import arenaHero from './assets/msc-arena-hero.png'
-import fightNight from './assets/msc-fight-night.png'
 import instagramAvatar from './assets/msc-instagram-avatar.jpg'
 
 const eventHighlights = [
@@ -90,7 +89,25 @@ function App() {
         </div>
 
         <aside className="fight-poster" aria-label="Resumo visual do evento">
-          <img src={fightNight} alt="" aria-hidden="true" />
+          <div className="poster-stage" aria-hidden="true">
+            <span className="poster-beam poster-beam-left" />
+            <span className="poster-beam poster-beam-right" />
+            <span className="poster-halo" />
+            <div className="octagon-mark">
+              <span className="octagon-grid" />
+              <span className="octagon-core" />
+              <span className="octagon-fence octagon-fence-one" />
+              <span className="octagon-fence octagon-fence-two" />
+            </div>
+            <div className="poster-metric poster-metric-date">
+              <span>Data</span>
+              <strong>22 Dez</strong>
+            </div>
+            <div className="poster-metric poster-metric-place">
+              <span>Local</span>
+              <strong>Lisboa</strong>
+            </div>
+          </div>
           <div className="poster-glass">
             <p className="poster-eyebrow">Edição especial</p>
             <p className="poster-title">Campo Pequeno</p>
