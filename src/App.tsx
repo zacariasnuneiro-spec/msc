@@ -1,6 +1,10 @@
 import './App.css'
 import arenaHero from './assets/msc-arena-hero.png'
 import instagramAvatar from './assets/msc-instagram-avatar.jpg'
+import merchAccessories from './assets/merch-acessorios-training.jpg'
+import merchShorts from './assets/merch-calcoes-combate.jpg'
+import merchJersey from './assets/merch-camisola-performance.jpg'
+import merchHoodie from './assets/merch-hoodie-walkout.jpg'
 
 const eventHighlights = [
   {
@@ -32,6 +36,33 @@ const featureCards = [
   },
 ]
 
+const merchItems = [
+  {
+    category: 'Performance',
+    title: 'Camisola técnica MSC',
+    text: 'Malha preta de combate, painéis octogonais, detalhes dourados e acentos vermelhos para noite de evento.',
+    image: merchJersey,
+  },
+  {
+    category: 'Fightwear',
+    title: 'Calções de combate',
+    text: 'Corte atlético, cintura reforçada e grafismo premium pensado para treino, walkout e lifestyle.',
+    image: merchShorts,
+  },
+  {
+    category: 'Walkout',
+    title: 'Hoodie arena',
+    text: 'Peça pesada de entrada com interior vermelho, fecho dourado e textura tonal inspirada no octógono.',
+    image: merchHoodie,
+  },
+  {
+    category: 'Training pack',
+    title: 'Acessórios oficiais',
+    text: 'Pack visual com boné, ligaduras e luvas de treino para completar a linha MSC Championship 2026.',
+    image: merchAccessories,
+  },
+]
+
 function App() {
   return (
     <main className="site-shell">
@@ -42,6 +73,7 @@ function App() {
         </a>
         <nav className="nav-links">
           <a href="#evento">Evento</a>
+          <a href="#merch">Merch</a>
           <a href="#local">Local</a>
           <a href="#novidades">Novidades</a>
         </nav>
@@ -142,6 +174,35 @@ function App() {
             <strong>{item.value}</strong>
           </article>
         ))}
+      </section>
+
+      <section className="merch-section" id="merch">
+        <div className="merch-header">
+          <div>
+            <span className="section-kicker">Merchandising oficial</span>
+            <h2>Linha MSC 2026 para arena, treino e rua.</h2>
+          </div>
+          <p>
+            Uma coleção visual de edição especial para acompanhar o regresso da MSC ao Campo Pequeno.
+            As peças e disponibilidade final serão anunciadas com a abertura de bilheteira.
+          </p>
+        </div>
+
+        <div className="merch-grid">
+          {merchItems.map((item) => (
+            <article className="merch-card" key={item.title}>
+              <div className="merch-visual">
+                <img src={item.image} alt={item.title} />
+                <span className="merch-status">Em breve</span>
+              </div>
+              <div className="merch-copy">
+                <span>{item.category}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="editorial-section" id="evento">
